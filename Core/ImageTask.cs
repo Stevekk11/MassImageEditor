@@ -1,4 +1,4 @@
-﻿namespace MassImageEditor;
+﻿namespace MassImageEditor.Core;
 
 /// <summary>
 /// Represents a task for processing an image file.

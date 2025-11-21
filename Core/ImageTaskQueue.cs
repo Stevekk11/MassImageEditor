@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 
-namespace MassImageEditor;
+namespace MassImageEditor.Core;
 
 /// <summary>
 /// Represents a queue to manage image processing tasks in a thread-safe manner.
