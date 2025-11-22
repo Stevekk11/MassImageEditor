@@ -95,7 +95,6 @@ public sealed class ImageWorker
         using var image = Image.FromFile(task.FilePath);
         using var bitmap = new Bitmap(image);
 
-        // Process through pipeline
         Bitmap processedImage = _pipeline.Process(bitmap);
 
         // Determine output path with correct extension

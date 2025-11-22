@@ -62,6 +62,8 @@ public sealed class ImageProcessorPipeline
         {
             pipeline.AddProcessor(new RotateProcessor(settings.RotationDegrees));
         }
+        //Add black and white processor
+        pipeline.AddProcessor(new BlackAndWhiteProcessor(settings.BlackAndWhiteEnabled));
 
         return pipeline;
     }
