@@ -1,11 +1,27 @@
 ﻿namespace MassImageEditor.Core.Processors;
 
+/// <summary>
+/// The BrightnessProcessor class is responsible for adjusting the brightness of an image.
+/// It processes an input bitmap by increasing or decreasing the color intensity of each pixel
+/// based on a specified brightness value.
+/// </summary>
 public class BrightnessProcessor : IImageProcessor
 {
-    private readonly int _brightness;
+    private int _brightness;
 
+    public BrightnessProcessor(int brightness)
+        {
+            _brightness = brightness;
+        }
     public Bitmap Process(Bitmap image)
     {
+        if (!ShouldProcess)
+        {
+            return image;
+        }
+
+
+        int adjustedBrightness = (int)(_brightness * 2.55);
         Bitmap adjustedImage = new Bitmap(image.Width, image.Height);
 
         for (int x = 0; x < image.Width; x++)
@@ -14,9 +30,9 @@ public class BrightnessProcessor : IImageProcessor
             {
                 Color pixel = image.GetPixel(x, y);
 
-                int red = Math.Max(0, Math.Min(255, pixel.R + _brightness));
-                int green = Math.Max(0, Math.Min(255, pixel.G + _brightness));
-                int blue = Math.Max(0, Math.Min(255, pixel.B + _brightness));
+                int red = Math.Max(0, Math.Min(255, pixel.R + adjustedBrightness));
+                int green = Math.Max(0, Math.Min(255, pixel.G + adjustedBrightness));
+                int blue = Math.Max(0, Math.Min(255, pixel.B + adjustedBrightness));
 
                 adjustedImage.SetPixel(x, y, Color.FromArgb(pixel.A, red, green, blue));
             }
@@ -25,10 +41,5 @@ public class BrightnessProcessor : IImageProcessor
         return adjustedImage;
     }
 
-    public BrightnessProcessor(int brightness)
-    {
-        _brightness = brightness;
-    }
-
-    public bool ShouldProcess => _brightness >= 0;
+    public bool ShouldProcess => _brightness < 101 && _brightness > -101;
 }

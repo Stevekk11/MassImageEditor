@@ -205,17 +205,17 @@ partial class Settings
         BrightnessBox.Text = "Change brightness";
         BrightnessBox.UseVisualStyleBackColor = true;
         BrightnessBox.CheckedChanged += BrightnessBox_CheckedChanged;
-        // 
+        //
         // trackBar1
         // 
         trackBar1.Enabled = false;
         trackBar1.Location = new System.Drawing.Point(483, 93);
         trackBar1.Maximum = 100;
+        trackBar1.Minimum = -100;
         trackBar1.Name = "trackBar1";
-        trackBar1.Size = new System.Drawing.Size(279, 45);
+        trackBar1.Size = new System.Drawing.Size(290, 45);
         trackBar1.TabIndex = 17;
-        trackBar1.TickFrequency = 10;
-        trackBar1.Value = 50;
+        trackBar1.TickFrequency = 20;
         // 
         // label1
         // 
@@ -223,7 +223,7 @@ partial class Settings
         label1.Name = "label1";
         label1.Size = new System.Drawing.Size(299, 26);
         label1.TabIndex = 18;
-        label1.Text = "0     10     20     30    40     50     60    70     80    90     100";
+        label1.Text = "0     10     20     30    40     def.     60    70     80    90     100";
         // 
         // Settings
         // 
