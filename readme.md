@@ -79,6 +79,7 @@ dotnet run --configuration Release
 
 #### Black & White Filter
 - **Enable B&W**: Convert images to grayscale
+- **Brightness**: Adjust brightness
 ## License
 This project is a school project by Štěpán Végh (2025).
 
