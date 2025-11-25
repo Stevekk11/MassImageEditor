@@ -17,6 +17,7 @@ public partial class Settings : Form
     public Settings()
     {
         InitializeComponent();
+        DetectThreads();
         _settings = ProcessingSettings.Instance;
         LoadSettings();
     }
@@ -172,5 +173,12 @@ public partial class Settings : Form
         {
             trackBar1.Enabled = false;
         }
+    }
+
+    public void DetectThreads()
+    {
+        int processorCount = Environment.ProcessorCount;
+        MaxThreadsChooser.Maximum = processorCount;
+        MaxThreadsChooser.Value = processorCount;
     }
 }

@@ -1,3 +1,4 @@
+using System.Configuration;
 using Serilog;
 
 namespace MassImageEditor;
@@ -5,17 +6,25 @@ namespace MassImageEditor;
 static class Program
 {
     /// <summary>
-    ///  The main entry point for the application.
+    /// Entry point for the MassImageEditor application.
+    /// Configures logging, handles unhandled exceptions, and starts the main application window.
     /// </summary>
     [STAThread]
     static void Main()
     {
+        string? logFolder = ConfigurationManager.AppSettings["LogFolder"];
+        //default log folder to "Logs" if not specified in config
+        if (string.IsNullOrWhiteSpace(logFolder))
+           logFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs");
+
+        Directory.CreateDirectory(logFolder);
+        var logPath = Path.Combine(logFolder, "MassImageEditor--.log");
         Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
             .Enrich.FromLogContext()
             .WriteTo.Console()
             .WriteTo.File(
-                path: "../../../Logs/MassImageEditor-.log",
+                path: logPath,
                 rollingInterval: RollingInterval.Day,
                 retainedFileCountLimit: 7,
                 rollOnFileSizeLimit: true,
