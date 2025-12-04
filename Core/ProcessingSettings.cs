@@ -27,7 +27,7 @@ public sealed class ProcessingSettings
     public bool ContrastEnabled { get; set; }
     public int ContrastValue { get; set; }
     public bool SharpnessEnabled { get; set; }
-    public int SharpnessValue { get; set; }
+    public int SharpnessValue { get; set; } = 25;
 
     private ProcessingSettings()
     {

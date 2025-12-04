@@ -54,6 +54,7 @@ partial class Settings
         label5 = new System.Windows.Forms.Label();
         Sharpness = new System.Windows.Forms.NumericUpDown();
         SharpnessChkBox = new System.Windows.Forms.CheckBox();
+        label6 = new System.Windows.Forms.Label();
         PerformanceGroupBox.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)MaxThreadsChooser).BeginInit();
         ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
@@ -269,7 +270,7 @@ partial class Settings
         Sharpness.Name = "Sharpness";
         Sharpness.Size = new System.Drawing.Size(133, 23);
         Sharpness.TabIndex = 22;
-        Sharpness.Value = new decimal(new int[] { 1, 0, 0, 0 });
+        Sharpness.Value = new decimal(new int[] { 25, 0, 0, 0 });
         // 
         // SharpnessChkBox
         // 
@@ -281,11 +282,20 @@ partial class Settings
         SharpnessChkBox.UseVisualStyleBackColor = true;
         SharpnessChkBox.CheckedChanged += SharpnessChkBox_CheckedChanged;
         // 
+        // label6
+        // 
+        label6.Location = new System.Drawing.Point(631, 323);
+        label6.Name = "label6";
+        label6.Size = new System.Drawing.Size(33, 21);
+        label6.TabIndex = 24;
+        label6.Text = "%";
+        // 
         // Settings
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(800, 515);
+        Controls.Add(label6);
         Controls.Add(SharpnessChkBox);
         Controls.Add(Sharpness);
         Controls.Add(label5);
@@ -316,6 +326,8 @@ partial class Settings
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.Label label6;
 
     private System.Windows.Forms.NumericUpDown Sharpness;
     private System.Windows.Forms.CheckBox SharpnessChkBox;
