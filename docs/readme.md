@@ -49,9 +49,6 @@ A high-performance Windows Forms application for batch processing images with mu
 5. **NFR-05**: Resource Management - Efficient memory usage with proper disposal of image objects
 6. **NFR-06**: Thread Safety - Safe concurrent access to shared resources
 
-### Use Cases
-See [docs_class-diagram.puml](docs_class-diagram.puml) for detailed UML Use Case and Sequence diagrams.
-
 ## Features
 
 - **Batch Image Processing**: Process hundreds or thousands of images simultaneously
