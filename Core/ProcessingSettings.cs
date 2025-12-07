@@ -28,6 +28,8 @@ public sealed class ProcessingSettings
     public int ContrastValue { get; set; }
     public bool SharpnessEnabled { get; set; }
     public int SharpnessValue { get; set; } = 25;
+    public bool PixelateEnabled { get; set; }
+    public int PixelateBlockSize { get; set; } = 10;
 
     private ProcessingSettings()
     {

@@ -55,11 +55,15 @@ partial class Settings
         Sharpness = new System.Windows.Forms.NumericUpDown();
         SharpnessChkBox = new System.Windows.Forms.CheckBox();
         label6 = new System.Windows.Forms.Label();
+        PixelateCheckBox = new System.Windows.Forms.CheckBox();
+        PixelateBlockSize = new System.Windows.Forms.NumericUpDown();
+        label7 = new System.Windows.Forms.Label();
         PerformanceGroupBox.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)MaxThreadsChooser).BeginInit();
         ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
         ((System.ComponentModel.ISupportInitialize)ContrastTrackBar).BeginInit();
         ((System.ComponentModel.ISupportInitialize)Sharpness).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)PixelateBlockSize).BeginInit();
         SuspendLayout();
         // 
         // ResizeCheckBox
@@ -265,6 +269,7 @@ partial class Settings
         // Sharpness
         // 
         Sharpness.BackColor = System.Drawing.Color.LightGreen;
+        Sharpness.Enabled = false;
         Sharpness.Location = new System.Drawing.Point(492, 321);
         Sharpness.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
         Sharpness.Name = "Sharpness";
@@ -290,11 +295,44 @@ partial class Settings
         label6.TabIndex = 24;
         label6.Text = "%";
         // 
+        // PixelateCheckBox
+        // 
+        PixelateCheckBox.Location = new System.Drawing.Point(494, 357);
+        PixelateCheckBox.Name = "PixelateCheckBox";
+        PixelateCheckBox.Size = new System.Drawing.Size(120, 21);
+        PixelateCheckBox.TabIndex = 25;
+        PixelateCheckBox.Text = "Pixelate image";
+        PixelateCheckBox.UseVisualStyleBackColor = true;
+        PixelateCheckBox.CheckedChanged += PixelateCheckBox_CheckedChanged;
+        // 
+        // PixelateBlockSize
+        // 
+        PixelateBlockSize.BackColor = System.Drawing.Color.LightGreen;
+        PixelateBlockSize.Enabled = false;
+        PixelateBlockSize.Location = new System.Drawing.Point(492, 384);
+        PixelateBlockSize.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
+        PixelateBlockSize.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+        PixelateBlockSize.Name = "PixelateBlockSize";
+        PixelateBlockSize.Size = new System.Drawing.Size(133, 23);
+        PixelateBlockSize.TabIndex = 26;
+        PixelateBlockSize.Value = new decimal(new int[] { 10, 0, 0, 0 });
+        // 
+        // label7
+        // 
+        label7.Location = new System.Drawing.Point(631, 387);
+        label7.Name = "label7";
+        label7.Size = new System.Drawing.Size(67, 19);
+        label7.TabIndex = 27;
+        label7.Text = "pixel size";
+        // 
         // Settings
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(800, 515);
+        Controls.Add(label7);
+        Controls.Add(PixelateBlockSize);
+        Controls.Add(PixelateCheckBox);
         Controls.Add(label6);
         Controls.Add(SharpnessChkBox);
         Controls.Add(Sharpness);
@@ -323,9 +361,15 @@ partial class Settings
         ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
         ((System.ComponentModel.ISupportInitialize)ContrastTrackBar).EndInit();
         ((System.ComponentModel.ISupportInitialize)Sharpness).EndInit();
+        ((System.ComponentModel.ISupportInitialize)PixelateBlockSize).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.NumericUpDown PixelateBlockSize;
+    private System.Windows.Forms.Label label7;
+
+    private System.Windows.Forms.CheckBox PixelateCheckBox;
 
     private System.Windows.Forms.Label label6;
 

@@ -58,8 +58,16 @@ public partial class Settings : Form
         // Brightness checkbox and value
         BrightnessBox.Checked = _settings.BrightnessEnabled;
         trackBar1.Value = _settings.BrightnessValue;
+        // Contrast checkbox and value
         ContrastTrackBar.Value = _settings.ContrastValue;
+        ContrastCheckBox.Checked = _settings.ContrastEnabled;
+        // Sharpness checkbox and value
         Sharpness.Value = _settings.SharpnessValue;
+        SharpnessChkBox.Checked = _settings.SharpnessEnabled;
+        // Pixelate checkbox and value
+        PixelateCheckBox.Checked = _settings.PixelateEnabled;
+        PixelateBlockSize.Value = _settings.PixelateBlockSize;
+
     }
 
     /// <summary>
@@ -113,6 +121,9 @@ public partial class Settings : Form
         //Save sharpness checkbox and value
         _settings.SharpnessEnabled = SharpnessChkBox.Checked;
         _settings.SharpnessValue = (int)Sharpness.Value;
+        //Save pixelate checkbox and value
+        _settings.PixelateEnabled = PixelateCheckBox.Checked;
+        _settings.PixelateBlockSize = (int)PixelateBlockSize.Value;
     }
 
     private bool ValidateDimensions(int? w, int? h)
@@ -213,6 +224,18 @@ public partial class Settings : Form
         else
         {
             Sharpness.Enabled = false;
+        }
+    }
+
+    private void PixelateCheckBox_CheckedChanged(object sender, EventArgs e)
+    {
+        if (PixelateCheckBox.Checked)
+        {
+            PixelateBlockSize.Enabled = true;
+        }
+        else
+        {
+            PixelateBlockSize.Enabled = false;
         }
     }
 }
