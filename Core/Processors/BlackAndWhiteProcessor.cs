@@ -7,11 +7,6 @@ public class BlackAndWhiteProcessor : IImageProcessor
         ShouldProcess = shouldProcess;
     }
 
-    public Bitmap Process(Bitmap image)
-    {
-        return Process(image, null);
-    }
-
     public Bitmap Process(Bitmap image, IProgressReporter? progressReporter)
     {
         if (!ShouldProcess)

@@ -47,7 +47,7 @@ public sealed class ImageProcessorPipeline
     }
 
     /// <summary>
-    /// Processes an image through all processors in the pipeline, reporting progress.
+    /// Processes an image through all processors in the pipeline, optionally reporting progress.
     /// Returns the final processed image.
     /// </summary>
     public Bitmap Process(Bitmap sourceImage, IProgressReporter? progressReporter)
